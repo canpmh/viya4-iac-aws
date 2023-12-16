@@ -193,7 +193,7 @@ module "autoscaling" {
 
 module "ebs" {
   source = "./modules/aws_ebs_csi"
-
+  count = var.ebs_csi_driver_enabled ? 1 : 0
   prefix       = var.prefix
   cluster_name = local.cluster_name
   tags         = local.tags

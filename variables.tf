@@ -669,6 +669,12 @@ variable "enable_ebs_encryption" {
   default     = false
 }
 
+variable "ebs_csi_driver_enabled" {
+  description = "Enable the EBS CSI daemon set.  Defaults to false as the pods run on all nodes and contain a privileged container."
+  type = bool
+  default = false
+}
+
 variable "enable_efs_encryption" {
   description = "Enable encryption on EFS file systems."
   type        = bool

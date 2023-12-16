@@ -24,3 +24,10 @@ variable "oidc_url" {
   type        = string
   default     = ""
 }
+
+variable "ebs_csi_driver_enabled" {
+  description = "Deploy the EBS CSI Driver if EBS volumes will be provisioned for containers."
+  type = bool
+  default = false
+
+}

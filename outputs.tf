@@ -168,7 +168,7 @@ output "cluster_api_mode" {
 
 output "ebs_csi_account" {
   description = "ARN of IAM role for ebs-csi-controller Service Account."
-  value       = module.ebs.ebs_csi_account
+  value       = var.ebs_csi_driver_enabled ? module.ebs[0].ebs_csi_account : null
 }
 
 output "k8s_version" {
